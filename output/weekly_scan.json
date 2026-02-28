@@ -1,0 +1,116 @@
+[
+  {
+    "name": "FoundationAgents/MetaGPT",
+    "stars": 64590,
+    "issues": [
+      {
+        "title": "[Feature] MetaGPT system troubleshooting with the WFGY 16-problem map",
+        "comments": 0,
+        "url": "https://github.com/FoundationAgents/MetaGPT/issues/1947",
+        "score": 5
+      },
+      {
+        "title": "Code only outputs to console, not saved to file",
+        "comments": 0,
+        "url": "https://github.com/FoundationAgents/MetaGPT/issues/1948",
+        "score": 2
+      },
+      {
+        "title": "[Security] Remote Code Execution (RCE) in MetaGPT Benchmark Evaluation via Unsafe `exec()`",
+        "comments": 0,
+        "url": "https://github.com/FoundationAgents/MetaGPT/issues/1942",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "name": "zhayujie/chatgpt-on-wechat",
+    "stars": 41632,
+    "issues": [
+      {
+        "title": "docker启动之后无法打开二维码web地址",
+        "comments": 4,
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat/issues/2630",
+        "score": 8
+      },
+      {
+        "title": "大佬们 。这个项目现在还有啥方式可以玩吗",
+        "comments": 2,
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat/issues/2629",
+        "score": 4
+      },
+      {
+        "title": "Proposal: Optional BoxLite sandbox backend (experimental)",
+        "comments": 0,
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat/issues/2677",
+        "score": 2
+      },
+      {
+        "title": "web 控制台不能输入和输出文件",
+        "comments": 0,
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat/issues/2682",
+        "score": 0
+      },
+      {
+        "title": "您好请问机器人支持微信群聊吗，是个微，不是企业微信",
+        "comments": 0,
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat/issues/2675",
+        "score": 0
+      },
+      {
+        "title": "我一年多以前写了个whatsapp 的扩展接口，有人需要吗。。",
+        "comments": 0,
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat/issues/2637",
+        "score": 0
+      },
+      {
+        "title": "1",
+        "comments": 0,
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat/issues/2628",
+        "score": 0
+      },
+      {
+        "title": "使用问题",
+        "comments": 0,
+        "url": "https://github.com/zhayujie/chatgpt-on-wechat/issues/2627",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "name": "bytedance/deer-flow",
+    "stars": 22526,
+    "issues": [
+      {
+        "title": "怀疑 sandbox 问题",
+        "comments": 0,
+        "url": "https://github.com/bytedance/deer-flow/issues/935",
+        "score": 0
+      },
+      {
+        "title": "请教下，DeerFlow2.0集成RAGFlow知识库的配置过程大概有哪些 ？",
+        "comments": 0,
+        "url": "https://github.com/bytedance/deer-flow/issues/933",
+        "score": 0
+      },
+      {
+        "title": "Agent执行时提示bash 工具存在配置问题、上传文件识别不到的问题",
+        "comments": 0,
+        "url": "https://github.com/bytedance/deer-flow/issues/928",
+        "score": 0
+      },
+      {
+        "title": "Pull sandbox image 错误",
+        "comments": 0,
+        "url": "https://github.com/bytedance/deer-flow/issues/925",
+        "score": 0
+      },
+      {
+        "title": "最新代码docker启动报错",
+        "comments": 0,
+        "url": "https://github.com/bytedance/deer-flow/issues/918",
+        "score": 0
+      }
+    ]
+  }
+]
