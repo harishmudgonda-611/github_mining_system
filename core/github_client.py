@@ -10,9 +10,6 @@ from datetime import datetime, timezone
 from urllib.parse import urlparse
 
 import requests
-from dotenv import load_dotenv
-
-load_dotenv()
 TOKEN = os.getenv("GITHUB_TOKEN")
 
 BASE_HEADERS = {
