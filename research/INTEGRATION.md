@@ -15,5 +15,10 @@ Every collected item should record canonical URL, repository full name when appl
 ## Safety
 Respect GitHub API terms, authentication scopes and rate limits. Do not scrape private repositories beyond granted permissions, bypass access controls or crawl arbitrary user-supplied hosts. Add explicit allowlists, request budgets, redaction and secret scanning before indexing content.
 
-## Delivery status
-The branch now includes a dependency-free offline HTML normalizer at `research/normalize.py` with tests at `tests/test_research_normalize.py`. It parses locally saved HTML only and performs no network requests. API-first collection remains the preferred future path; never ingest secrets or private keys.
+## Implemented in this branch
+- `core/github_client.py` now uses GitHub's official HTTPS REST API only, with optional Bearer authentication (public endpoints work without a token), explicit 15-second timeouts, a 4 MB response cap, redirect blocking, HTTP error handling and rate-limit reporting.
+- `agents/issue_agent.py` validates owner/repository path segments and routes issue retrieval through the bounded API client. Existing ranking and output fields are preserved.
+- `research/normalize.py` remains available for operator-supplied saved HTML; it performs no network requests.
+- Regression tests cover unauthenticated public requests, host validation, rate limits, response limits and issue endpoint behavior.
+
+No GitHub HTML scraping or repository secret ingestion was added.
