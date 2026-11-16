@@ -53,8 +53,8 @@ class GitHubClientTests(unittest.TestCase):
 
     @patch("agents.issue_agent.github_get")
     def test_issue_endpoint_uses_validated_owner_repo_and_official_api(self, api):
-        api.return_value = {"items": []}
-        self.assertEqual(fetch_issues("octocat", "hello-world"), {"items": []})
+        api.return_value = []
+        self.assertEqual(fetch_issues("octocat", "hello-world"), [])
         api.assert_called_once_with(
             "https://api.github.com/repos/octocat/hello-world/issues",
             {"state": "open", "per_page": 10},
