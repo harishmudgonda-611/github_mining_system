@@ -16,4 +16,4 @@ Every collected item should record canonical URL, repository full name when appl
 Respect GitHub API terms, authentication scopes and rate limits. Do not scrape private repositories beyond granted permissions, bypass access controls or crawl arbitrary user-supplied hosts. Add explicit allowlists, request budgets, redaction and secret scanning before indexing content.
 
 ## Delivery status
-This is an adapter plan only; no runtime code or dependencies are changed. Implement API-first collectors and fixture tests before enabling any HTML crawler.
+The branch now includes a dependency-free offline HTML normalizer at `research/normalize.py` with tests at `tests/test_research_normalize.py`. It parses locally saved HTML only and performs no network requests. API-first collection remains the preferred future path; never ingest secrets or private keys.
