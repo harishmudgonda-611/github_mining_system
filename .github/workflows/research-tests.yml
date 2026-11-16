@@ -5,12 +5,18 @@ on:
     paths:
       - "research/**"
       - "tests/test_research_normalize.py"
+      - "core/**"
+      - "agents/**"
+      - "tests/test_github_client.py"
       - ".github/workflows/research-tests.yml"
   push:
     branches: ["main"]
     paths:
       - "research/**"
       - "tests/test_research_normalize.py"
+      - "core/**"
+      - "agents/**"
+      - "tests/test_github_client.py"
 
 permissions:
   contents: read
@@ -24,6 +30,6 @@ jobs:
         with:
           python-version: "3.11"
       - name: Compile research module and tests
-        run: python -m compileall -q research tests
+        run: python -m compileall -q research core agents tests
       - name: Run research normalizer tests
-        run: python -m unittest discover -s tests -p "test_research_normalize.py" -v
+        run: python -m unittest discover -s tests -v
