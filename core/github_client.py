@@ -30,10 +30,10 @@ class GitHubAPIError(RuntimeError):
     """A bounded, user-safe error returned by the GitHub API client."""
 
 
-def github_get(url: str, params: dict | None = None) -> dict:
+def github_get(url: str, params: dict | None = None) -> dict | list:
     """GET a public GitHub API resource with explicit time and size limits."""
     parsed = urlparse(url)
-    if parsed.scheme != "https" or parsed.hostname != "api.github.com" or parsed.username or parsed.password:
+    if parsed.scheme != "https" or parsed.hostname != "api.github.com" or parsed.port not in (None, 443) or parsed.username or parsed.password:
         raise ValueError("Only HTTPS requests to api.github.com are allowed.")
 
     response = requests.get(
@@ -42,8 +42,11 @@ def github_get(url: str, params: dict | None = None) -> dict:
         params=params,
         timeout=REQUEST_TIMEOUT_SECONDS,
         stream=True,
+        allow_redirects=False,
     )
     try:
+        if 300 <= response.status_code < 400:
+            raise GitHubAPIError("GitHub API returned a redirect; redirects are disabled for research requests.")
         if response.status_code == 403 and response.headers.get("X-RateLimit-Remaining") == "0":
             reset = response.headers.get("X-RateLimit-Reset")
             suffix = f" Reset epoch: {reset}." if reset else ""
@@ -70,7 +73,7 @@ def github_get(url: str, params: dict | None = None) -> dict:
             payload = json.loads(b"".join(chunks).decode("utf-8"))
         except (UnicodeDecodeError, json.JSONDecodeError) as exc:
             raise GitHubAPIError("GitHub API returned invalid JSON.") from exc
-        if not isinstance(payload, dict):
+        if not isinstance(payload, (dict, list)):
             raise GitHubAPIError("GitHub API returned an unexpected response shape.")
         return payload
     finally:
